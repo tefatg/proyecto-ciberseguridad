@@ -1,13 +1,3 @@
-header{
-    font-size: 500%;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: rgb(63, 71, 129);
-    color: white;
-    text-align: center;
-    padding: 4%;
-    flex-wrap: wrap;
-}
-
 .main-header {
     background-color: #7bbee6;
     padding: 40px 5%;
@@ -139,56 +129,3 @@ nav {
     }
 }
 
-  body {
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 120%;
-    background-color: rgb(195, 213, 229);
-    color: #333;
-  }
-  
-  .grid-principal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 2em;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .caja {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5em;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    text-align: center;
-  }
-  
-  .caja h2 {
-    color: rgb(64, 91, 178);
-    margin-bottom: 0.5em;
-    text-align: center;
-  }
-  
-  .caja ul {
-    padding-left: 1.2em;
-  }
-  
-  .caja li {
-    margin-bottom: 0.5em;
-  }
-  .caja img{
-    align-items: center;
-  }
-  
-  .pie {
-    background-color: rgb(52, 69, 114);
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 1em;
-    margin-top: 2em;
-  }
-  
