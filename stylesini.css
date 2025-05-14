@@ -1,3 +1,13 @@
+header{
+    font-size: 500%;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(63, 71, 129);
+    color: white;
+    text-align: center;
+    padding: 4%;
+    flex-wrap: wrap;
+}
+
 .main-header {
     background-color: #7bbee6;
     padding: 40px 5%;
@@ -11,10 +21,10 @@
 }
 
 html, body {
-    background-color: #c8d9e6;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden; 
+    background-color: #c8d9e6;
 }
 
 * {
@@ -24,7 +34,7 @@ html, body {
 }
 
 header {
-    background-color:#7bbee6;
+    background-color: #7bbee6;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 400%;
@@ -32,7 +42,7 @@ header {
 }
 
 nav {
-     background-color: #4b99c7;
+   background-color: #4b99c7;
     font-family: 'Times New Roman', Times, serif;
     padding: 0 5%;
     width:100%;
@@ -130,13 +140,13 @@ nav {
     }
 }
 
+/* Layout principal */
 .wrapper {
-  margin: 40px; /* Separación del borde de la página */
+  margin: 20px 5%;
 }
 
 .grid-container {
-  display: grid; /*Convierte un contenedor en una cuadrícula de diseño*/
-  gap: 15px;
+  display: grid;
   grid-template-areas:
     "extra-top"
     "sidebar"
@@ -144,13 +154,13 @@ nav {
     "extra-left"
     "extra-right"
     "footer";
+  gap: 20px;
 }
 
-/* Pantallas medianas o más anchas */
-@media (min-width: 600px) {
+/* Pantallas medianas en adelante: sidebar + main en 2 columnas */
+@media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr 3fr;
     grid-template-areas:
       "extra-top    extra-top"
       "sidebar      main"
@@ -159,48 +169,51 @@ nav {
   }
 }
 
+/* Áreas */
 .extra-top {
   grid-area: extra-top;
-  background: #ffff;
-  padding: 10px;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 .sidebar {
   grid-area: sidebar;
-  background: #ffff;
-  padding: 10px;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 .main {
   grid-area: main;
-  background:  #ffff;
-  padding: 10px;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.extra-left, .extra-right {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 .extra-left {
-align-items: center;
- grid-template-columns: 1fr 1fr; 
   grid-area: extra-left;
-  background: #ffff;
-  padding: 10px;
-  border-radius:30px;
 }
 
 .extra-right {
   grid-area: extra-right;
-   grid-template-columns: 1fr 1fr;
-  background:  #ffff; /*color blanco para mayor profundidad*/
-  padding: 30px;
-  border-radius:8px; /*sirve para crear el borde de las cajas*/
 }
 
 .footer {
   grid-area: footer;
   background: #2f4156;
-  padding: 30px;
-  border-radius: 8px;
+  color: white;
   text-align: center;
+  padding: 30px;
+  border-radius: 10px;
 }
