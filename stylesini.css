@@ -8,6 +8,9 @@ header{
     flex-wrap: wrap;
 }
 
+h2, h3{
+    color: rgb(64, 91, 178);
+}
 .main-header {
     background-color: #7bbee6;
     padding: 40px 5%;
