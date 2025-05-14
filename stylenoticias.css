@@ -23,7 +23,7 @@ html, body {
 }
 
 header {
-    background-color: #7bbee6;
+    background-color: #567CBD;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 400%;
@@ -31,7 +31,7 @@ header {
 }
 
 nav {
-    background-color: #4b99c7;
+     background-color: #4b99c7;
     font-family: 'Times New Roman', Times, serif;
     padding: 0 5%;
     width:100%;
