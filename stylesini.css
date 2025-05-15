@@ -1,25 +1,39 @@
+header{
+    font-size: 500%; /*tamaño de fuente*/
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(63, 71, 129);
+    color: white;
+    text-align: center;
+    padding: 4%; /*espacio interno*/
+    flex-wrap: wrap;/* Permite que los elementos se envuelvan */
+}
+
+h2, h3{
+    color: rgb(64, 91, 178);
+}
 .main-header {
     background-color: #7bbee6;
     padding: 40px 5%;
-    text-align: center;
+    text-align: center; 
 }
 
 .main-header h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espacio debajo del título */
 }
 
 html, body {
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden; /* Deshabilita el desbordamiento horizontal */
+    background-color: #c8d9e6; /* Color de fondo suave */
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Box-sizing para facilitar el control de los tamaños */
 }
 
 header {
@@ -31,18 +45,18 @@ header {
 }
 
 nav {
-    background-color: #4b99c7;
+   background-color: #4b99c7;
     font-family: 'Times New Roman', Times, serif;
-    padding: 0 5%;
-    width:100%;
-    height: 130px;
-    position: relative;
-    top: 0;
+    padding: 0 5%;/* Espaciado horizontal */
+    width:100%;/*Ancho completo */
+    height: 130px; /* Altura de la barra de navegación */
+    position: relative;/* Posición relativa para su posicionamiento */
+    top: 0; /* Asegura que esté encima de otros elementos */
     z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    overflow: visible; 
+    justify-content: space-between;/* Espacia los elementos a los extremos */
+    overflow: visible;  /* Permite que los elementos se desborden */
 }
 
 #toggle {
@@ -58,8 +72,8 @@ nav {
 }
 
 .list {
-    display: flex;
-    gap: 20px;
+    display: flex;/* Disposición flex */
+    gap: 20px; /* Espacio entre los enlaces */
     list-style: none;
 }
 
@@ -93,91 +107,125 @@ nav {
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
 }
-
+/* Estilos adaptativos para pantallas pequeñas (máximo 768px de ancho) */
 @media (max-width: 768px) {
+    /* Cambia la barra de navegación a disposición vertical */
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        padding-top: 20px;
+        flex-direction: column; /* Elementos uno debajo del otro */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        height: auto; /* Altura automática según contenido */
+        padding-top: 20px; /* Espacio arriba del nav */
     }
 
+    /* Muestra el ícono de barras (hamburguesa) para menú móvil */
     .icon-bars {
-        display: flex;
-        position: absolute;
-        top: 30px;
-        right: 5%;
+        display: flex; /* Se muestra como contenedor flexible */
+        position: absolute; /* Posición absoluta respecto al nav */
+        top: 30px; /* Separación desde arriba */
+        right: 5%; /* Separación desde la derecha */
     }
 
+    /* Lista de enlaces del menú en versión móvil */
     .list {
-        flex-direction: column;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente oscuro */
+        max-height: 0; /* Oculta inicialmente (altura cero) */
+        overflow: hidden; /* Oculta el contenido que se desborda */
+        transition: max-height 0.4s ease-in-out; /* Animación para expandir */
     }
 
+    /* Cuando se activa el toggle (checkbox), se expande la lista */
     #toggle:checked ~ .list {
-        max-height: 300px;
-        flex-direction: column;
+        max-height: 300px; /* Muestra el menú al hacer clic */
+        flex-direction: column; /* Asegura que se mantenga vertical */
     }
 
+    /* Estilo para los enlaces dentro del menú móvil */
     .list a {
-        font-size: 20px;
-        padding: 15px 20px;
+        font-size: 20px; /* Tamaño de letra mayor para mejor lectura táctil */
+        padding: 15px 20px; /* Espaciado amplio alrededor del texto */
     }
 }
 
-.grid-container > *{
-    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
-    border-radius:4px;
-    padding:10px;
-    text-align:center;
-}
-.sidebar {
-    grid-area: sidebar;
-    background-color: #0e9ff3;
+/* Contenedor principal del contenido */
+.wrapper {
+  margin: 20px 5%; /* Margen exterior del contenido */
 }
 
-.main {
-    grid-area: main;
-    background-color: #675bf9;
-}
-
-.footer {
-    grid-area: footer;
-    background-color: aquamarine;
-}
-
+/* Contenedor de cuadrícula para disposición de áreas */
 .grid-container {
-    display: grid;
-    gap: 10px;
+  display: grid; /* Activación de CSS Grid */
+  grid-template-areas:
+    "extra-top"     /* Área superior adicional */
+    "sidebar"       /* Barra lateral */
+    "main"          /* Contenido principal */
+    "extra-left"    /* Área adicional izquierda */
+    "extra-right"   /* Área adicional derecha */
+    "footer";       /* Pie de página */
+  gap: 20px; /* Espaciado entre áreas */
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr 3fr;
     grid-template-areas:
-        "sidebar"
-        "main"
-        "footer";
+      "extra-top    extra-top"      /* Encabezado ocupa ambas columnas */
+      "sidebar      main"           /* Sidebar y contenido principal lado a lado */
+      "extra-left   extra-right"    /* Áreas adicionales en columnas */
+      "footer       footer";        /* Pie de página a lo ancho */
+  }
 }
 
-/* Pantallas medianas en adelante */
-@media (min-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 100px 50px auto;
-        grid-template:
-            "sidebar main" 400px
-            "footer footer" 50px /
-            1fr 2fr;
-    }
+/* Área superior */
+.extra-top {
+  grid-area: extra-top; /* Asigna el área correspondiente */
+  background: #ffffff; /* Fondo blanco */
+  padding: 20px; /* Relleno interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
-@media (min-width: 900px) {
-    .grid-container {
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 100px 50px auto;
-        grid-template:
-            "sidebar main" 400px
-            "footer footer" 50px /
-            1fr 2fr;
-    }
+/* Barra lateral */
+.sidebar {
+  grid-area: sidebar;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Contenido principal */
+.main {
+  grid-area: main;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Áreas adicionales izquierda y derecha */
+.extra-left, .extra-right {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.extra-left {
+  grid-area: extra-left;
+}
+
+.extra-right {
+  grid-area: extra-right;
+}
+
+/* Pie de página */
+.footer {
+  grid-area: footer;
+  background: #2f4156; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centrado de contenido */
+  padding: 30px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
 }
